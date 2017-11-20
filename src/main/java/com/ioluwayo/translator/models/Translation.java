@@ -107,4 +107,18 @@ public class Translation {
         result = 31 * result + (reverseFrame3 != null ? reverseFrame3.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Translation{" +
+                "sequence='" + sequence + '\'' +
+                ", length=" + length +
+                ", frame1='" + frame1 + '\'' +
+                ", frame2='" + frame2 + '\'' +
+                ", frame3='" + frame3 + '\'' +
+                ", reverseFrame1='" + reverseFrame1 + '\'' +
+                ", reverseFrame2='" + reverseFrame2 + '\'' +
+                ", reverseFrame3='" + reverseFrame3 + '\'' +
+                '}';
+    }
 }
