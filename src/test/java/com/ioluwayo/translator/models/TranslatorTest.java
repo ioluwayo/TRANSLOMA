@@ -17,11 +17,6 @@ public class TranslatorTest {
         expectedTranslation.setReverseFrame1("LFL");
         expectedTranslation.setReverseFrame2("YF");
         expectedTranslation.setReverseFrame3("IS");
-        Translation translation = translator.translate(DNA);
-        System.out.println(translation);
-        System.out.println();
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!---------!!!!!!!!!");
-        System.out.println(expectedTranslation);
         assertEquals(expectedTranslation,translator.translate(DNA));
     }
 
