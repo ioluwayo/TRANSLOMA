@@ -1,0 +1,16 @@
+.example {
+    -webkit-column-width: 0px;
+    -moz-column-width: 0px;
+    column-width: 0px;
+}
+* {
+    border-radius: 0 !important;
+}
+.btn:focus {
+    outline: none;
+}
+small {
+    font-size: x-small;
+}
+.frame {
+}

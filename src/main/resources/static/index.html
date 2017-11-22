@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>NUCLEOTIDE SEQUENCE TRANSLATOR</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.8.2/umd/popper.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class="header clearfix">
+                <h3 class="text-muted">TRANSLOMA</h3>
+            </header>
+            <div>
+                <hr>
+                <p2 class="text-muted">Translate DNA and RNA sequences to Amino-acid sequences using this simple tool.</p2>
+            </div>
+            <div class="form-group">
+                <label for="sequence">DNA or RNA sequence:</label>
+                <textarea class="form-control" rows="10" id="sequence"></textarea>
+            </div>
+            <div class="col-md-5">
+                <label class="checkbox-inline"><input type="checkbox" value="" checked>Foward Frame 1</label>
+                <label class="checkbox-inline"><input type="checkbox" value="" checked>Foward Frame 2</label>
+                <label class="checkbox-inline"><input type="checkbox" value="" checked>Foward Frame 3</label>
+            </div>
+            <div class="col-md-5">
+                <label class="checkbox-inline"><input type="checkbox" value="" checked>Reverse Frame 1</label>
+                <label class="checkbox-inline"><input type="checkbox" value="" checked>Reverse Frame 2</label>
+                <label class="checkbox-inline"><input type="checkbox" value="" checked>Reverse Frame 3</label>
+            </div>
+            <div class="col-md-2 text-right ">
+                <button class="btn btn-success" onclick="submitFunction()">Translate</button>
+                <button class="btn btn-danger" onclick="translate()">Reset</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="">
+                <div class="col-md-4 frame forwardFrame1">
+                    <h6>Forward reading frame: 1, Length = 30</h6>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                </div>
+                <div class="col-md-4 frame forwardFrame2">
+                    <h6>Forward reading frame: 2, Length = 30</h6>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                </div>
+                <div class="col-md-4 frame forwardFrame3">
+                    <h6>Forward reading frame: 3, Length = 30</h6>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                </div>
+            </div>
+            <div class="">
+                <div class="col-md-4 frame reverseFrame1">
+                    <h6>Reverse reading frame: 1, Length = 30</h6>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                </div>
+                <div class="col-md-4 frame reverseFrame2">
+                    <h6>Reverse reading frame: 2, Length = 30</h6>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                </div>
+                <div class="col-md-4 frame reverseFrame3">
+                    <h6>Reverse reading frame: 3, Length = 30</h6>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                    <small>MSYCLMADJNJNSJFKBKSBHKDBFKJAJKHETRBERTCHTDSAFT</small>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
