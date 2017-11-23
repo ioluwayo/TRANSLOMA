@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 });
 function reset(blah) {
-    $("#sequence").empty();
+    location.reload();
 }
 function example(){
     $("#sequence").val("GCATTAAAAGAAATCGATAGTAGTGTGCTCAATGTTGCTGTCACCGGGGAGACGGGATCA\n" +
