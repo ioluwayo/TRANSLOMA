@@ -11,7 +11,7 @@ function submitFunction() {
     if(sequence === ''){
         alert("You have to enter a sequence.");
     }
-    $.getJSON('https://immense-citadel-59192.herokuapp.com/'+sequence, {format:"json"}, function(data){
+    $.getJSON('https://immense-citadel-59192.herokuapp.com/api/translate?sequence='+sequence, {format:"json"}, function(data){
         $(".results").empty();
         for(var i = 0; i<6; i++){
             var update ='<div class="col-md-4 frame">'
