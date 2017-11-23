@@ -1,6 +1,8 @@
 package com.ioluwayo.translator.models;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -91,22 +93,29 @@ public class Translator {
     }
     public Translation translate(String sequence){
         sequence = sequence.toUpperCase(); // ensure its in uppercase.
+        sequence = sequence.replace(" ","").trim(); // remove all spaces
+        sequence = sequence.replace("T","U");// convert to RNA
+
+        if (!sequence.matches("^[AUCG]+$")){
+            throw new IllegalArgumentException("The sequence contains non RNA/DNA characters. " +
+                    "Allowed characters are [ATUCG].");
+        }
+
         Translation translation = new Translation();
         translation.setSequence(sequence);
-        translation.setFrame1(translateToAminoAcid(sequence));
-        translation.setFrame2(translateToAminoAcid(sequence.substring(1)));
-        translation.setFrame3(translateToAminoAcid(sequence.substring(2)));
+        translation.addFrame(translateToAminoAcid(sequence));
+        translation.addFrame(translateToAminoAcid(sequence.substring(1)));
+        translation.addFrame(translateToAminoAcid(sequence.substring(2)));
 
         // build complementary sequence and translate from 5'->3' end. pretty much reverse compliment
         StringBuilder reverseBuilder = new StringBuilder();
         for(Character c: sequence.toCharArray())
             reverseBuilder.append(complementMap.get(c));
         reverseBuilder.reverse();
-
         String reverseSequence = reverseBuilder.toString();
-        translation.setReverseFrame1(translateToAminoAcid(reverseSequence));
-        translation.setReverseFrame2(translateToAminoAcid(reverseSequence.substring(1)));
-        translation.setReverseFrame3(translateToAminoAcid(reverseSequence.substring(2)));
+        translation.addFrame(translateToAminoAcid(reverseSequence));
+        translation.addFrame(translateToAminoAcid(reverseSequence.substring(1)));
+        translation.addFrame(translateToAminoAcid(reverseSequence.substring(2)));
         return translation;
     }
 }
