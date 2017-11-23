@@ -1,4 +1,4 @@
 Transloma.
 
-Deployed on heroku. [a link](https://github.com/user/repo/blob/branch/other_file.md)
-Front end [a relative link](src/main/resources/static)
+Deployed on heroku. [Link](https://immense-citadel-59192.herokuapp.com)
+Front end [resources](src/main/resources/static)
