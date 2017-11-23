@@ -3,9 +3,16 @@ $(document).ready(function() {
 
 });
 function reset(blah) {
-    alert("ADAD");
+    $("#sequence").empty();
 }
-
+function example(){
+    $("#sequence").val("GCATTAAAAGAAATCGATAGTAGTGTGCTCAATGTTGCTGTCACCGGGGAGACGGGATCA\n" +
+        "GGGAAGTCCAGCTTCATCAATACCCTGAGAGGCATTGGGAATGAAGAAGAAGGTGCAGCT\n" +
+        "AAAACTGGGGTGGTGGAGGTAACCATGGAAAGACATCCATACAAACACCCCAATATACCC\n" +
+        "AATGTGGTTTTTTGGGACCTGCCTGGGATTGGAAGCACAAATTTCCCACCAAACACTTAC\n" +
+        "CTGGAGAAAATGAAGTTCTATGAGTACGATTTCTTCATTATTATTTCGGCCACACGCTTC");
+    submitFunction();
+}
 function submitFunction() {
     var sequence = $('textarea').val();
     if(sequence === ''){
@@ -27,7 +34,6 @@ function submitFunction() {
             for(var j =0; j<frame.length;j+=35){
                 var n =j+1;
                 update+='<small class="float-left">'+spacer(frame.substring(j,j+40))+'</small>';
-                update += '<small class="float-right">'+n+"<br>"+'</small>';
 
             }
             $(".results").append(update);

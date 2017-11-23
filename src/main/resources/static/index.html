@@ -21,22 +21,13 @@
                 <p2 class="text-muted">Translate DNA and RNA sequences to Amino-acid sequences using this simple tool.</p2>
             </div>
             <div class="form-group">
-                <label for="sequence">Enter a DNA or RNA sequence:</label>
+                <label for="sequence">Enter a DNA or RNA sequence: e.g AUGCUUUGC</label>
                 <textarea class="form-control" rows="10" id="sequence"></textarea>
             </div>
-            <div class="col-md-5">
-                <label class="checkbox-inline"><input type="checkbox" value="" checked>Foward Frame 1</label>
-                <label class="checkbox-inline"><input type="checkbox" value="" checked>Foward Frame 2</label>
-                <label class="checkbox-inline"><input type="checkbox" value="" checked>Foward Frame 3</label>
-            </div>
-            <div class="col-md-5">
-                <label class="checkbox-inline"><input type="checkbox" value="" checked>Reverse Frame 1</label>
-                <label class="checkbox-inline"><input type="checkbox" value="" checked>Reverse Frame 2</label>
-                <label class="checkbox-inline"><input type="checkbox" value="" checked>Reverse Frame 3</label>
-            </div>
-            <div class="col-md-2 text-right ">
+            <div class="text-right ">
                 <button class="btn btn-success" onclick="submitFunction()">Translate</button>
-                <button class="btn btn-danger" onclick="translate()">Reset</button>
+                <button class="btn btn-danger" onclick="reset()">Reset</button>
+                <button class="btn btn-primary" onclick="example()">Example</button>
             </div>
         </div>
         <div class="container">
